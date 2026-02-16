@@ -1,0 +1,107 @@
+body {
+    
+    font-family: 'Macondo', cursive;
+    background: url("bg1.jpg");
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+}
+.container {
+    background: rgba(240, 240, 240, 0.72);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.812);
+    width: 90%;
+    max-width: 500px;
+}
+h1 {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 0;
+}
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    outline: none;
+    transition: all ease 0.3s;
+}
+input:focus {
+    border-color: rgb(198, 134, 75);
+}
+#addbtn{
+    background: rgb(175, 138, 58);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all ease 0.3s;
+}
+#addbtn:hover
+{
+    background: rgb(218, 194, 133);
+    color: rgb(0, 0, 0);
+    box-shadow: 1px 1px 2px black;
+    transform: scale(1.04);
+    font-weight: bolder;
+
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: rgb(226, 181, 159);
+    border:none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    transition: all ease 0.2s;
+}
+li:hover {
+    background: rgb(185, 150, 68);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.762);
+    border: none;
+}
+.editbtn{
+    color: #5f6e98;
+    background:none;
+    border: none;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+.editbtn:hover
+{
+  color: black;
+  transform: scale(1.2);
+}
+.deletebtn{
+    color: #e74c3c;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+.deletebtn:hover{
+  color: black;
+  transform: scale(1.2);
+}
