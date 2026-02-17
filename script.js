@@ -54,10 +54,9 @@ function makeedit(index) {
     let editinput = document.getElementById(`editinput-${index}`);
     let editbtn = document.getElementById(`btn-${index}`);
     if (editinput.style.display==="none")
-    {   view.style.display="none";
-        editinput.style.display="block";
-        editinput.focus();
-        editbtn.innerHTML='<i class="fa-solid fa-floppy-disk"></i>';
+    {  editinput.style.display="block";
+       view.style.display="none";
+       editbtn.innerHTML='<i class="fa-solid fa-floppy-disk"></i>';
     }
     else
     {

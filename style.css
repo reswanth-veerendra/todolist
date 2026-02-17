@@ -109,8 +109,9 @@ li:hover {
     padding: 5px;
     border-radius: 4px;
     font-family: 'Macondo', cursive;
+    background: rgb(185, 150, 68);
+    border: none;
 }
 .editinput:focus{
-    border: none;
-    background: rgb(185, 150, 68);
+font-size: large;
 }
