@@ -12,9 +12,9 @@ function save()
 {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
-function addTask()
+function addtask()
 {   let input=document.getElementById("taskinput");
-    let text=input.value;
+    let text=input.value.trim();
     if (text===""){ 
         window.alert("Enter a task to add");
         return;}
@@ -39,6 +39,9 @@ function displayTasks()
                 <button class="deletebtn" onclick="deleteit(${index})">
                 <i class="fa-solid fa-trash"></i>
                 </button>
+                 <button id="completedbtn" onclick="markcompleted(${index})">🟢</button>
+
+                
             </div>`;
         list.appendChild(li);
     });
@@ -49,7 +52,8 @@ function deleteit(index)
     save();
     displayTasks();
 }
-function makeedit(index) {
+function makeedit(index)
+{
     let view = document.getElementById(`view-${index}`);
     let editinput = document.getElementById(`editinput-${index}`);
     let editbtn = document.getElementById(`btn-${index}`);
@@ -60,14 +64,19 @@ function makeedit(index) {
     }
     else
     {
-    let newText=editinput.value;
-        if (newText=="")
+    let newtext=editinput.value.trim();
+        if (newtext=="")
         {window.alert("Task cannot be empty");
         }
         else
-        {   tasks[index].text = newText;
+        {   tasks[index].text = newtext;
             save();
             displayTasks();
         }
     }
+}
+function markcompleted(index)
+{
+let span=document.querySelectorAll("#tasklist span")[index];
+span.classList.toggle("completed");
 }

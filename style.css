@@ -17,8 +17,7 @@ body{
     box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.812);
     width: 90%;
     max-width: 500px;
-    margin: 40px;
-}
+    margin: 40px;}
 h1{
     font-family: 'Lobster', cursive;
     text-align: center;
@@ -77,6 +76,11 @@ li{
     font-weight: bold;
     transition: all ease 0.2s;
 }
+li span
+{
+flex:1;
+word-break: break-word;
+}
 li:hover {
     background: rgb(185, 150, 68);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.762);
@@ -115,4 +119,18 @@ li:hover {
 }
 .editinput:focus{
 font-size: large;
+}
+.completed
+{
+text-decoration:line-through;
+color:green;
+}
+#completedbtn{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transition: all 0.3s ease;
+}
+#completedbtn:hover
+{
+font-size: 1.06rem;
 }
