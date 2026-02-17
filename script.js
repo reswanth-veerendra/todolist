@@ -49,12 +49,12 @@ function deleteit(index)
     save();
     displayTasks();
 }
-function makeEdit(index) {
+function makeedit(index) {
     let view = document.getElementById(`view-${index}`);
     let editinput = document.getElementById(`editinput-${index}`);
     let editbtn = document.getElementById(`btn-${index}`);
     if (editinput.style.display==="none")
-    {  viewSpan.style.display="none";
+    {   view.style.display="none";
         editinput.style.display="block";
         editinput.focus();
         editbtn.innerHTML='<i class="fa-solid fa-floppy-disk"></i>';
@@ -62,13 +62,13 @@ function makeEdit(index) {
     else
     {
     let newText=editinput.value;
-        if (newText!== "")
+        if (newText=="")
+        {window.alert("Task cannot be empty");
+        }
+        else
         {   tasks[index].text = newText;
             save();
             displayTasks();
-        }
-        else
-        {window.alert("Task cannot be empty");
         }
     }
 }
