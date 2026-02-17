@@ -17,6 +17,7 @@ body{
     box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.812);
     width: 90%;
     max-width: 500px;
+    margin: 40px;
 }
 h1{
     font-family: 'Lobster', cursive;
