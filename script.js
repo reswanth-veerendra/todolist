@@ -13,10 +13,11 @@ function save()
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 function addTask()
-{
-    let input=document.getElementById("taskinput");
+{   let input=document.getElementById("taskinput");
     let text=input.value;
-    if (text==="") return;
+    if (text===""){ 
+        window.alert("Enter a task to add");
+        return;}
     tasks.push({text:text});
     input.value="";
     save();
@@ -24,32 +25,50 @@ function addTask()
 }
 function displayTasks()
 {
-    let list=document.getElementById("tasklist");
-    list.innerHTML="";
+    let list = document.getElementById("tasklist");
+    list.innerHTML = "";
     tasks.forEach((task, index) => {
-        let li=document.createElement("li");
-        li.innerHTML=`
-            <div>${task.text}</div>
+        let li = document.createElement("li");
+        li.innerHTML = `
+            <span id="view-${index}">${task.text}</span>
+            <input type="text" id="editinput-${index}" class="editinput" value="${task.text}" style="display:none;">
             <div class="actions">
-                <button class="editbtn" onclick="edit(${index})"><i class="fa-solid fa-pen-to-square"></i></button>
-                <button class="deletebtn" onclick="deletet(${index})"><i class="fa-solid fa-trash"></i></button>
+                <button class="editbtn" id="btn-${index}" onclick="makeedit(${index})">
+                <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="deletebtn" onclick="deleteit(${index})">
+                <i class="fa-solid fa-trash"></i>
+                </button>
             </div>`;
-    list.appendChild(li);
- });
+        list.appendChild(li);
+    });
 }
-function edit(index)
-{
-    let newTaskText = prompt("Edit your task:", tasks[index].text);
-    if (newTaskText!==null && newTaskText!=="")
-        {
-        tasks[index].text = newTaskText;
-        save();
-        displayTasks();
-        }
-}
-function deletet(index)
+function deleteit(index)
 {
     tasks.splice(index, 1);
     save();
     displayTasks();
+}
+function makeEdit(index) {
+    let view = document.getElementById(`view-${index}`);
+    let editinput = document.getElementById(`editinput-${index}`);
+    let editbtn = document.getElementById(`btn-${index}`);
+    if (editinput.style.display==="none")
+    {  viewSpan.style.display="none";
+        editinput.style.display="block";
+        editinput.focus();
+        editbtn.innerHTML='<i class="fa-solid fa-floppy-disk"></i>';
+    }
+    else
+    {
+    let newText=editinput.value;
+        if (newText!== "")
+        {   tasks[index].text = newText;
+            save();
+            displayTasks();
+        }
+        else
+        {window.alert("Task cannot be empty");
+        }
+    }
 }

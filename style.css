@@ -1,6 +1,4 @@
-body {
-    
-    font-family: 'Macondo', cursive;
+body{
     background: url("bg1.jpg");
     background-size: cover;
     backdrop-filter: blur(5px);
@@ -11,7 +9,7 @@ body {
     margin: 0;
     padding-top: 50px;
 }
-.container {
+.container{
     background: rgba(240, 240, 240, 0.72);
     backdrop-filter: blur(10px);
     padding: 2rem;
@@ -20,7 +18,7 @@ body {
     width: 90%;
     max-width: 500px;
 }
-h1 {
+h1{
     font-family: 'Lobster', cursive;
     text-align: center;
     color: rgb(0, 0, 0);
@@ -61,11 +59,12 @@ input:focus {
     font-weight: bolder;
 
 }
-ul {
+ul{
     list-style: none;
     padding: 0;
 }
-li {
+li{ 
+    font-family: 'Macondo', cursive;
     background: rgb(226, 181, 159);
     border:none;
     border-radius: 8px;
@@ -104,4 +103,14 @@ li:hover {
 .deletebtn:hover{
   color: black;
   transform: scale(1.2);
+}
+.edit-input{
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    font-family: 'Macondo', cursive;
+}
+.editinput:focus{
+    border: none;
+    background: rgb(185, 150, 68);
 }
